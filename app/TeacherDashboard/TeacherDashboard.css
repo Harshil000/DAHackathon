@@ -36,3 +36,8 @@
 .sidebar-btn:hover {
     background-color: #7b1fa2;
 }
+
+.mainContent{
+    width: calc(100vw - 255px);
+    height: 100%;
+}

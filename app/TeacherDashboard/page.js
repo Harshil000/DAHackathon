@@ -1,13 +1,34 @@
-import React from 'react'
-import SideBar from '@/components/SideBar.js'
+'use client'
+import React, { useState } from 'react'
+import './TeacherDashboard.css'
+import Assignment from '@/components/Assignment.js'
 
 const page = () => {
-  return (
-    <main className='flex items-center h-screen w-full'>
-        <SideBar/>
-        <div className="mainContent"></div>
-    </main>
-  )
+
+    const [page, setpage] = useState("DashBoard")
+
+    const LodePage = (e) => {
+        setpage(e.target.getAttribute("data-page"))
+    }
+
+    return (
+        <main className='flex items-center h-screen w-full'>
+            <div className="sidebar">
+                <h2>EduGuru</h2>
+                <button className="sidebar-btn" id="attendance-btn" data-page="DashBoard" onClick={(e) => { LodePage(e) }}>DashBoard</button>
+                <button className="sidebar-btn" id="attendance-btn" data-page="Attendence" onClick={(e) => { LodePage(e) }}>Track Attendance </button>
+                <button className="sidebar-btn" id="assign-homework-btn" data-page="Assignment" onClick={(e) => { LodePage(e) }}>Assign Homework</button>
+                <button className="sidebar-btn" id="announcements-btn" data-page="Announcement" onClick={(e) => { LodePage(e) }}>Announcements</button>
+                <button className="sidebar-btn" id="student-profiles-btn" data-page="StudentProfiles" onClick={(e) => { LodePage(e) }}>Student Profiles</button>
+                <div className="customization-area">
+                    <button className="sidebar-btn" id="theme-toggle">Light Mode</button>
+                </div>
+            </div>
+            <div className="mainContent">
+                {page == "Assignment" && <Assignment/>}
+            </div>
+        </main>
+    )
 }
 
 export default page
