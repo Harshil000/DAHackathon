@@ -1,0 +1,95 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #FFFDD0;
+    /* Creamy background */
+    color: #800080;
+    /* Purple text color */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    border: 2px solid #800080;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    text-align: center;
+    width: 350px;
+}
+
+.header {
+    animation: slide-in 1s ease-out;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.header h2 {
+    margin: 10px 0 20px;
+    font-size: 18px;
+}
+
+#registrationForm {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin: 10px 0 5px;
+    text-align: left;
+}
+
+input {
+    padding: 8px;
+    border: 1px solid #800080;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    transition: transform 0.2s;
+}
+
+input:focus {
+    outline: none;
+    transform: scale(1.05);
+}
+
+.register-button {
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: #800080;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.register-button:hover {
+    background-color: #600060;
+    transform: translateY(-3px);
+}
+
+.login-link {
+    color: #800080;
+    text-decoration: none;
+}
+
+.login-link:hover {
+    text-decoration: underline;
+}
+
+@keyframes slide-in {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
