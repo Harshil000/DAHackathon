@@ -2,6 +2,8 @@
 import React, { useState } from 'react'
 import './TeacherDashboard.css'
 import Assignment from '@/components/Assignment.js'
+import Announcement from '@/components/Announcement.js'
+import Attendence from '@/components/Attendence.js'
 
 const page = () => {
 
@@ -24,8 +26,10 @@ const page = () => {
                     <button className="sidebar-btn" id="theme-toggle">Light Mode</button>
                 </div>
             </div>
-            <div className="mainContent">
+            <div className="mainContent flex items-center justify-center overflow-y-scroll">
                 {page == "Assignment" && <Assignment/>}
+                {page == "Announcement" && <Announcement/>}
+                {page == "Attendence" && <Attendence/>}
             </div>
         </main>
     )
